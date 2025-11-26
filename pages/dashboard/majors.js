@@ -9,7 +9,11 @@ export default function DashboardSSG({ majors }) {
       <Card title="Majors (SSG)">
         <List
           dataSource={majors}
-          renderItem={(item) => <List.Item>{item}</List.Item>}
+          renderItem={(item) => (
+            <List.Item>
+              {item.name} {/* show human-readable name */}
+            </List.Item>
+          )}
           bordered
           style={{ maxHeight: 300, overflow: "auto" }}
         />
