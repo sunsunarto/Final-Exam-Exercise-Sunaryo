@@ -1,4 +1,3 @@
-// pages/students/[id].js
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import {
@@ -103,7 +102,6 @@ export default function StudentDetail({ student }) {
         )}
       </Card>
 
-      {/* Refactored modal */}
       <EditStudentModal
         visible={editing}
         onCancel={() => setEditing(false)}
@@ -119,7 +117,6 @@ function formatAddress(a) {
   return [a.address, a.city, a.state, a.postalCode].filter(Boolean).join(", ");
 }
 
-// SSG: pre-render some paths and fallback true
 export async function getStaticPaths() {
   try {
     const res = await fetch("https://dummyjson.com/users?limit=20");

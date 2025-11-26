@@ -1,4 +1,3 @@
-// components/EditStudentModal.js
 import React from "react";
 import { Modal, Form, Input } from "antd";
 
@@ -6,7 +5,7 @@ export default function EditStudentModal({ visible, onCancel, onOk, form }) {
   return (
     <Modal
       title="Edit Student"
-      open={visible} // use `open` instead of `visible` in AntD v5
+      open={visible}
       onCancel={onCancel}
       onOk={onOk}
     >

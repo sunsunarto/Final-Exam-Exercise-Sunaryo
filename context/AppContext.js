@@ -3,10 +3,10 @@ import { createContext, useContext, useMemo, useState } from "react";
 const AppContext = createContext(null);
 
 export const AppProvider = ({ children }) => {
-  const [theme, setTheme] = useState("light"); // "light" | "dark"
+  const [theme, setTheme] = useState("light");
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [userName, setUserName] = useState("Sunaryo");
-  const [selectedMajor, setSelectedMajor] = useState(""); // default filter
+  const [selectedMajor, setSelectedMajor] = useState("");
 
   const value = useMemo(() => ({
     theme,

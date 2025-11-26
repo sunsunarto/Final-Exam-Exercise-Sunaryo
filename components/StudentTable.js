@@ -9,18 +9,15 @@ export default function StudentTable({ students = [], defaultMajor = "" }) {
   const [data, setData] = useState(students);
   const [majors, setMajors] = useState([]);
 
-  // keep student data synced
   useEffect(() => {
     setData(students);
   }, [students]);
 
-  // fetch categories from DummyJSON API
   useEffect(() => {
     async function fetchMajors() {
       try {
         const res = await fetch("https://dummyjson.com/products/categories");
         const json = await res.json();
-        // API returns array of objects {slug, name, url}
         setMajors(json || []);
       } catch (err) {
         console.error("Failed to fetch majors", err);
@@ -102,8 +99,8 @@ export default function StudentTable({ students = [], defaultMajor = "" }) {
           value={major || undefined}
           onChange={(v) => setMajor(v || "")}
           options={majors.map((m) => ({
-            label: m.name,   // show category name
-            value: m.slug,   // use slug as filter value
+            label: m.name,
+            value: m.slug,
           }))}
           style={{ width: 240 }}
         />

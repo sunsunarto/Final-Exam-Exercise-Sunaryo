@@ -9,7 +9,7 @@ export default function RandomStudentCard() {
     let active = true;
     (async () => {
       try {
-        const res = await fetch("/api/random-student"); // client fetch via Next route (optional)
+        const res = await fetch("/api/random-student");
         if (active) {
           if (res.ok) {
             const data = await res.json();
